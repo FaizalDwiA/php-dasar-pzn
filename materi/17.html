@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Expression&comma; Statement dan Block</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        <link rel="stylesheet" href="../assets/css/katex.min.css">
+<link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+<link rel="stylesheet" href="../assets/css/markdown.min.css">
+<link rel="stylesheet" href="../assets/css/highlight.min.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="expression-statement-dan-block">Expression, Statement dan Block</h1>
+<h2 id="expression">Expression</h2>
+<ul>
+<li>Expression adalah bagian terpenting di PHP</li>
+<li>Di PHP, hampir semua kode yang kita tulis adalah sebuah expression</li>
+<li>Secara sederhana, expression adalah apapun yang memiliki nilai atau value</li>
+</ul>
+<hr>
+<h2 id="contoh-expression-sederhana">Contoh Expression Sederhana</h2>
+<ul>
+<li>$a = 5; Ketika kita menuliskan “5”, maka tentu itu adalah nilai, oleh karena itu 5 tersebut adalah expression.</li>
+<li>Lalu kita menulis kode $b = $a; $a bisa kita bilang adalah expression, karena $a adalah nilai 5</li>
+</ul>
+<pre><code class="language-php"><span class="hljs-variable">$a</span> = <span class="hljs-number">5</span>;
+
+<span class="hljs-variable">$b</span> = <span class="hljs-variable">$a</span>;
+</code></pre>
+<hr>
+<h2 id="contoh-expression-complex">Contoh Expression Complex</h2>
+<ul>
+<li>Pada kode dibawah, getValue() adalah expression, karena getValue() bernilai angka 100. Tentang function nanti kita akan bahas lebih detail di materi tersendiri</li>
+</ul>
+<pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getValue</span>(<span class="hljs-params"></span>)
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">100</span>;
+}
+
+<span class="hljs-variable">$value</span> = <span class="hljs-title function_ invoke__">getValue</span>();
+</code></pre>
+<hr>
+<h2 id="statement">Statement</h2>
+<ul>
+<li>Statement bisa dibilang adalah kalimat lengkap dalam bahasa.</li>
+<li>Sebuah statement berisikan execution komplit, biasanya diakhiri dengan titik koma</li>
+</ul>
+<hr>
+<h2 id="kode--statement">Kode : Statement</h2>
+<pre><code class="language-php"><span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>;
+
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$name</span>;
+
+<span class="hljs-variable">$date</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">DateTIme</span>();
+</code></pre>
+<hr>
+<h2 id="block">Block</h2>
+<ul>
+<li>Block adalah kumpulan statement yang terdiri dari nol atau lebih statement.</li>
+<li>Block diawali dan diakhiri dengan kurung kurawal { }</li>
+</ul>
+<hr>
+<h2 id="kode--block">Kode : Block</h2>
+<pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">runApp</span>(<span class="hljs-params"><span class="hljs-variable">$name</span></span>)
+</span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Start Program&quot;</span> . PHP.EOL;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">$name</span>&quot;</span> . PHP.EOL;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;End Program&quot;</span> . PHP.EOL;
+}
+</code></pre>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

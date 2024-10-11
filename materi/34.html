@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arrow Function</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="arrow-function">Arrow Function</h1>
+    <h2 id="arrow-function-1">Arrow Function</h2>
+    <ul>
+        <li>Arrow function diperkenalkan di PHP 7.4 sebagai alternative anonymous function yang lebih sederhana
+            pembuatannya</li>
+        <li>Secara garis besar, sebenarnya arrow function dan anonymous function adalah dua hal yang sama</li>
+        <li>Hal yang membedakan di arrow function adalah, secara otomatis variable diluar closure bisa digunakan, tidak
+            seperti di anonymous function yang harus disebutkan secara manual menggunakan kata kunci use</li>
+        <li>Pembuatan arrow function tidak menggunakan kata kunci function, melainkan fn</li>
+        <li>Arrow function di khususnya untuk pembuatan function yang sederhana</li>
+    </ul>
+    <hr>
+    <h2 id="kode--arrow-function">Kode : Arrow Function</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$firstName</span> = <span class="hljs-string">&quot;Faizal&quot;</span>;
+<span class="hljs-variable">$lastName</span> = <span class="hljs-string">&quot;Dwi&quot;</span>;
+
+<span class="hljs-comment">// function anonymous</span>
+<span class="hljs-variable">$anonymousFunction</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) <span class="hljs-keyword">use</span> (<span class="hljs-params"><span class="hljs-variable">$firstName</span>, <span class="hljs-variable">$lastName</span></span>): <span class="hljs-title">string</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">$firstName</span> <span class="hljs-subst">$lastName</span>&quot;</span> . PHP_EOL;
+};
+
+<span class="hljs-comment">// arrow function</span>
+<span class="hljs-variable">$arrowFunction</span> = <span class="hljs-function"><span class="hljs-keyword">fn</span>(<span class="hljs-params"></span>) =&gt;</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">$firstName</span> <span class="hljs-subst">$lastName</span>&quot;</span> . PHP_EOL;
+
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$anonymousFunction</span>();
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$arrowFunction</span>();
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\34\1.webp" alt="1"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

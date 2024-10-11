@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tipe Data Number</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="tipe-data-number">Tipe Data Number</h1>
+    <h2 id="tipe-data-number-1">Tipe Data Number</h2>
+    <ul>
+        <li>Di PHP terdapat 2 jenis tipe data number
+            <ul>
+                <li>(int) Bilangan bulat decimal (base 10), hexadecimal (base 16), octa (base 8), binary (base 2) dan
+                </li>
+                <li>(float) Bilangan pecahan</li>
+            </ul>
+        </li>
+        <li>Di PHP kita bisa menambahkan _ (garis bawah) di angka, ini hanya untuk agar mudah dibaca, saat dijalankan, _
+            (garis bawah) tersebut akan di ignore</li>
+        <li>Untuk angka negatif, kita bisa menggunakan tanda - (minus) di depan angka</li>
+    </ul>
+    <hr>
+    <h2 id="kode--tipe-data-integer">Kode : Tipe Data Integer</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Decimal : &quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">1234</span>);
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Octal : &quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">0123</span>);
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hexadecimal : &quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">0x1A</span>);
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Binary : &quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">0b11111111</span>);
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Underscore di Number : &quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">1_234_567</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\4\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="kode--tipe-data-floating-point">Kode : Tipe Data Floating Point</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Floating Point : &quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">1.234</span>);
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Floating Point dengan E notation Plus (1.2 x 1000) : &quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">1.2e3</span>);
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Floating Point dengan E notation Minux (7 x 0.001) : &quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">7e-3</span>);
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Underscore di Floating Point : &quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">1_234.567</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\4\2.webp" alt="2"></p>
+    <hr>
+    <h2 id="integer-overflow">Integer Overflow</h2>
+    <ul>
+        <li>Secara default, kapasitas integer di PHP ada batasnya, 2147483647 untuk sistem operasi 32 bit, dan
+            9223372036854775807 untuk sistem operasi 64 bit</li>
+        <li>Jika kita membuat number integer yang melebihi nilai tersebut, maka secara otomatis tipe numbernya akan
+            berubah menjadi floating point</li>
+    </ul>
+    <hr>
+    <h2 id="kode--integer-overflow">Kode : Integer Overflow</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Integer Overflow 32 Bit : &quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">2147483648</span>);
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Integer Overflow 64 Bit : &quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">89243759827458927572</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\4\3.webp" alt="3"></p>
+
+
+
+</body>
+
+</html>

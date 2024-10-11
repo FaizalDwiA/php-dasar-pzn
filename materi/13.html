@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Operator Perbandingan</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="operator-perbandingan">Operator Perbandingan</h1>
+    <h2 id="operator-perbandingan-1">Operator Perbandingan</h2>
+    <p>- Operator perbandingan, seperti namanya, digunakan untuk membandingan dua buat value<br>
+        - Hasil dari operator perbandingan adalah boolean, true jika perbandingannya benar, false jika perbandingannya
+        salah</p>
+    <hr>
+    <h2 id="operator-perbandingan-1">Operator Perbandingan (1)</h2>
+    <table border="1" width="100%">
+        <tr>
+            <th>Operator</th>
+            <th>Nama</th>
+            <th>Keterangan</th>
+        </tr>
+        <tr>
+            <td>$a == $b</td>
+            <td>Sama dengan</td>
+            <td>true jika $a sama dengan $b setelah dilakukan konversi tipe data</td>
+        </tr>
+        <tr>
+            <td>$a === $b</td>
+            <td>Identik</td>
+            <td>true jika $a sama dengan $b dan memiliki tipe data yang sama</td>
+        </tr>
+        <tr>
+            <td>$a != $b</td>
+            <td>Tidak sama dengan</td>
+            <td>true jika $a tidak sama dengan $b setelah dilakukan konversi tipe data</td>
+        </tr>
+        <tr>
+            <td>$a <> $b</td>
+            <td>Tidak sama dengan</td>
+            <td>true jika $a tidak sama dengan $b setelah dilakukan konversi tipe data</td>
+        </tr>
+        <tr>
+            <td>$a !== $b</td>
+            <td>Tidak identik</td>
+            <td>true jika $a tidak sama dengan $b atau tidak sama tipe data</td>
+        </tr>
+        <tr>
+            <td>$a < $b</td>
+            <td>Kurang dari</td>
+            <td>true jika $a kurang dari $b</td>
+        </tr>
+        <tr>
+            <td>$a <= $b</td>
+            <td>Kurang dari atau sama dengan</td>
+            <td>true jika $a kurang dari atau sama dengan $b</td>
+        </tr>
+        <tr>
+            <td>$a > $b</td>
+            <td>Lebih dari</td>
+            <td>true jika $a lebih dari $b</td>
+        </tr>
+        <tr>
+            <td>$a >= $b</td>
+            <td>Lebih dari sama dengan</td>
+            <td>true jika $a lebih dari atau sama dengan $b</td>
+        </tr>
+    </table>
+    <hr>
+    <h2 id="kode--operator-perbandingan">Kode : Operator Perbandingan</h2>
+    <pre><code class="language-php"><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-string">&quot;10&quot;</span> == <span class="hljs-number">10</span>);
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-string">&quot;10&quot;</span> === <span class="hljs-number">10</span>);
+
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">10</span> &gt; <span class="hljs-number">9</span>);
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">10</span> &gt;= <span class="hljs-number">10</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\13\1.webp" alt="1"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

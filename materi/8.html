@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Constant</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="constant">Constant</h1>
+    <h2 id="constant-1">Constant</h2>
+    <ul>
+        <li>Variable di PHP sifatnya mutable, artinya bisa dirubah</li>
+        <li>Jika kita ingin membuat variable yang immutable (tidak bisa dirubah), maka tidak bisa kita lakukan di PHP
+        </li>
+        <li>Sebagai gantinya, terdapat fitur yang namanya constant</li>
+        <li>Constant adalah tempat untuk menyimpan data yang tidak bisa dirubah lagi setelah di deklarasikan</li>
+        <li>Untuk membuat constant kita bisa menggunakan function define()</li>
+        <li>Best practice pembuatan nama constant adalah menggunakan UPPER_CASE</li>
+    </ul>
+    <hr>
+    <h2 id="kode--constant">Kode : Constant</h2>
+    <pre><code class="language-php"><span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&quot;AUTHOR&quot;</span>, <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>);
+<span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&quot;APP_VERSION&quot;</span>, <span class="hljs-number">100</span>);
+
+<span class="hljs-keyword">echo</span> AUTHOR;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;\n&quot;</span>;
+<span class="hljs-keyword">echo</span> APP_VERSION;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;\n&quot;</span>;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\8\1.webp" alt="1"></p>
+
+
+
+</body>
+
+</html>

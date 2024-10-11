@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Operator Logika</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="operator-logika">Operator Logika</h1>
+    <h2 id="operator-logika-1">Operator Logika</h2>
+    <p>- Operator logika adalah operator untuk membandingkan dua nilai boolean<br>
+        - Hasil dari operator logika adalah boolean lagi</p>
+    <hr>
+    <h2 id="operator-logika-2">Operator Logika</h2>
+    <table border="1" width="100%">
+        <tr>
+            <th>Operator</th>
+            <th>Nama</th>
+            <th>Hasil</th>
+        </tr>
+        <tr>
+            <td>$a && $b</td>
+            <td>And</td>
+            <td>true jika $a dan $b keduanya true</td>
+        </tr>
+        <tr>
+            <td>$a and $b</td>
+            <td>And</td>
+            <td>true jika $a dan $b keduanya true</td>
+        </tr>
+        <tr>
+            <td>$a || $b</td>
+            <td>Or</td>
+            <td>true jika $a dan $b salah satu atau keduanya true</td>
+        </tr>
+        <tr>
+            <td>$a or $b</td>
+            <td>Or</td>
+            <td>true jika $a dan $b salah satu atau keduanya true</td>
+        </tr>
+        <tr>
+            <td>! $a</td>
+            <td>Not</td>
+            <td>true jika $a bernilai false</td>
+        </tr>
+        <tr>
+            <td>$a xor $b</td>
+            <td>Xor</td>
+            <td>true jika $a dan $b salah satu true, tapi tidak keduanya</td>
+        </tr>
+    </table>
+    <hr>
+    <h2 id="kode--operator-logika">Kode : Operator Logika</h2>
+    <pre><code class="language-php"><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">true</span>);
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">false</span>);
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-literal">true</span> || <span class="hljs-literal">false</span>);
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-literal">true</span> <span class="hljs-keyword">xor</span> <span class="hljs-literal">true</span>);
+<span class="hljs-title function_ invoke__">var_dump</span>(!<span class="hljs-literal">true</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\14\1.webp" alt="1"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

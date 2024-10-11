@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anonymous Function</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="anonymous-function">Anonymous Function</h1>
+    <h2 id="anonymous-function-1">Anonymous Function</h2>
+    <ul>
+        <li>Anonymous function adalah function tanpa nama, di PHP disebut juga dengan Closure</li>
+        <li>Anonymous function biasanya digunakan sebagai argument atau sebagai value di variable</li>
+        <li>Anonymous function membuat kita bisa mengirim function sebagai argument di function lainnya</li>
+    </ul>
+    <hr>
+    <h2 id="kode--anonymous-function">Kode : Anonymous Function</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$sayHello</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span></span>) </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">$name</span>&quot;</span> . PHP_EOL;
+};
+
+<span class="hljs-variable">$sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+<span class="hljs-variable">$sayHello</span>(<span class="hljs-string">&quot;Syiber&quot;</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\33\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="kode--anonymous-function-sebagai-argument">Kode : Anonymous Function Sebagai Argument</h2>
+    <pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayGoodBye</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$filter</span></span>) </span>{
+    <span class="hljs-variable">$finalName</span> = <span class="hljs-variable">$filter</span>(<span class="hljs-variable">$name</span>);
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Good Bye <span class="hljs-subst">$finalName</span>&quot;</span> . PHP_EOL;
+}
+
+<span class="hljs-title function_ invoke__">sayGoodBye</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, function(<span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span>) : <span class="hljs-keyword">string</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-title function_ invoke__">strtoupper</span>(<span class="hljs-variable">$name</span>);
+});
+
+<span class="hljs-comment">// sama dengan</span>
+
+<span class="hljs-variable">$filterFuntion</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span></span>) : <span class="hljs-title">string</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-title function_ invoke__">strtoupper</span>(<span class="hljs-variable">$name</span>);
+};
+
+<span class="hljs-title function_ invoke__">sayGoodBye</span>(<span class="hljs-string">&quot;Syiber&quot;</span>, <span class="hljs-variable">$filterFuntion</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\33\2.webp" alt="2"></p>
+    <hr>
+    <h2 id="mengakses-variable-di-luar-closure">Mengakses Variable di Luar Closure</h2>
+    <ul>
+        <li>Secara default, anonymous function tidak bisa mengakses variabel yang terdapat diluar function</li>
+        <li>Jika kita ingin menggunakan variable yang terdapat diluar anonymous function, kita perlu secara explicit
+            menyebutkannya menggunakan kata kunci use lalu diikuti variable-variable yang ingin kita gunakan</li>
+    </ul>
+    <hr>
+    <h2 id="kode--mengakses-variable-luar">Kode : Mengakses Variable Luar</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$firstName</span> = <span class="hljs-string">&quot;Faizal&quot;</span>;
+<span class="hljs-variable">$lastName</span> = <span class="hljs-string">&quot;Dwi&quot;</span>;
+
+<span class="hljs-variable">$sayHelloFaizal</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) <span class="hljs-keyword">use</span> (<span class="hljs-params"><span class="hljs-variable">$firstName</span>, <span class="hljs-variable">$lastName</span></span>) </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">$firstName</span> <span class="hljs-subst">$lastName</span>&quot;</span> . PHP_EOL;
+};
+
+<span class="hljs-variable">$sayHelloFaizal</span>();
+
+<span class="hljs-variable">$firstName</span> = <span class="hljs-string">&quot;Black&quot;</span>;
+<span class="hljs-variable">$lastName</span> = <span class="hljs-string">&quot;Syiber&quot;</span>;
+
+<span class="hljs-variable">$sayHelloFaizal</span>();
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\33\3.webp" alt="3"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

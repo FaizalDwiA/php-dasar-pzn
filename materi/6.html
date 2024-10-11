@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tipe Data String</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="tipe-data-string">Tipe Data String</h1>
+    <h2 id="tipe-data-string-1">Tipe Data String</h2>
+    <ul>
+        <li>Tipe data string adalah tipe data representasi dari teks</li>
+        <li>String bisa mengandung kosong atau banyak karakter</li>
+    </ul>
+    <hr>
+    <h2 id="single-quote">Single Quote</h2>
+    <ul>
+        <li>Untuk membuat String di PHP, kita bisa menggunakan single quote</li>
+    </ul>
+    <pre><code class="language-php"><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Nama : &#x27;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Faizal Dwi Al Farizi&#x27;</span>;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\6\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="double-quote">Double Quote</h2>
+    <ul>
+        <li>Selain single quote, kita juga bisa menggunakan double quote. Salah satu kelebihan menggunakan double
+        </li>
+        <li>quote adalah, kita menggunakan escape sequence untuk beberapa hal, seperti \n untuk ENTER \t untuk TAB,
+            \” untuk double quote, dan lain-lain</li>
+    </ul>
+    <pre><code class="language-php"><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Nama : &#x27;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Faizal Dwi Al Farizi&#x27;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;\n&quot;</span>;
+
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Nama : &quot;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Faizal\t Dwi\t Alfarizi&quot;</span>;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\6\2.webp" alt="2"></p>
+    <hr>
+    <h2 id="multiline-string">Multiline String</h2>
+    <ul>
+        <li>Kadang kita ingin membuat data string yang lebih dari satu baris. Untuk melakukan itu sebenarnya kita
+            bisa menggunakan \n sebagai ENTER</li>
+        <li>Namun PHP memiliki fitur yang lebih baik, yaitu bernama Heredoc dan Nowdoc</li>
+    </ul>
+    <hr>
+    <h2 id="heredoc">Heredoc</h2>
+    <ul>
+        <li>Heredoc adalah fitur untuk membuat String yang panjang, sehingga kita tidak perlu manual melakukan
+            enter, tab dan yang lain-lain secara manual</li>
+    </ul>
+    <pre><code class="language-php"><span class="hljs-keyword">echo</span> <span class="hljs-string">&lt;&lt;&lt;Faizal
+Ini adalah contoh string yang sangat
+panjang, dan juga gak perlu ENTER secara
+manual,\n\n\n &quot;bisa quote&quot; juga.
+Faizal</span>;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\6\3.webp" alt="3"></p>
+    <hr>
+    <h2 id="nowdoc">Nowdoc</h2>
+    <ul>
+        <li>Nowdoc mirip seperti Heredoc, yang membedakan adalah pada Nowdoc tidak memiliki kemampuan parsing
+            seperti di Heredoc atau Double Quote. Masalah parsing akan kita bahas di materi Manipulasi String</li>
+    </ul>
+    <pre><code class="language-php"><span class="hljs-keyword">echo</span> &lt;&lt;&lt;<span class="hljs-string">&#x27;Faizal&#x27;</span>
+Ini adalah contoh <span class="hljs-keyword">string</span> yang sangat
+panjang, dan juga gak perlu ENTER secara
+manual,\n\n\n <span class="hljs-string">&quot;bisa quote&quot;</span> juga.
+Faizal;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\6\4.webp" alt="4"></p>
+
+
+
+</body>
+
+</html>

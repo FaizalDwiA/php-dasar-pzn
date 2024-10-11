@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Data NULL</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="data-null">Data NULL</h1>
+    <h2 id="data-null-1">Data NULL</h2>
+    <ul>
+        <li>Nilai NULL merepresentasikan sebuah variable tanpa nilai.</li>
+        <li>Saat kita membuat variable, lalu ingin menghapus data yang terdapat di variable tersebut, kita bisa
+            menggunakan NULL untuk mengosongkan variable tersebut</li>
+        <li>Untuk membuat data NULL, kita bisa menggunakan kata kunci NULL (case insensitive)</li>
+    </ul>
+    <hr>
+    <h2 id="kode--data-null">Kode : Data NULL</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;Faizal&quot;</span>;
+<span class="hljs-variable">$name</span> = <span class="hljs-literal">NULL</span>;
+
+<span class="hljs-variable">$age</span> = <span class="hljs-literal">null</span>;
+</code></pre>
+    <hr>
+    <h2 id="mengecek-apakah-data-null">Mengecek Apakah Data NULL</h2>
+    <ul>
+        <li>Kadang kita ingin tahu apakah sebuah data bernilai null atau tidak</li>
+        <li>Untuk mengecek apakah sebuah data bernilai null, kita bisa menggunakan function is_null($variable)</li>
+    </ul>
+    <hr>
+    <h2 id="kode--mengecek-null">Kode : Mengecek NULL</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;Faizal&quot;</span>;
+<span class="hljs-variable">$name</span> = <span class="hljs-literal">NULL</span>;
+
+<span class="hljs-variable">$isNull</span> = <span class="hljs-title function_ invoke__">is_null</span>(<span class="hljs-variable">$name</span>);
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$isNull</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\9\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="menghapus-variable">Menghapus Variable</h2>
+    <ul>
+        <li>Selain mengubah menjadi NULL, di PHP juga kita bisa menghapus sebuah variable, caranya dengan menggunakan
+            function unset($variable)</li>
+        <li>Namun hati-hati, ketika kita hapus variable, kita tidak bisa lagi mengakses variable tersebut, bahkan
+            function is_null($variable) pun akan menjadi error jika mengakses variable tersebut.</li>
+        <li>Agar lebih aman, kita bisa menggunakan function isset($variable) untuk mengeccek apakah sebuah variable ada
+            dan nilainya tidak NULL</li>
+    </ul>
+    <hr>
+    <h2 id="kode--unset-dan-isset">Kode : Unset dan Isset</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$value</span> = <span class="hljs-string">&quot;Faizal&quot;</span>;
+<span class="hljs-keyword">unset</span>(<span class="hljs-variable">$value</span>);
+
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$value</span>));
+
+<span class="hljs-variable">$value</span> = <span class="hljs-string">&quot;Faizal&quot;</span>;
+
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$value</span>));
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\9\2.webp" alt="2"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Increment dan Decrement</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="increment-dan-decrement">Increment dan Decrement</h1>
+    <h2 id="increment-dan-decrement-1">Increment dan Decrement</h2>
+    <p>- PHP mendukung gaya bahasa pemrograman C untuk menaikkan dan menurunkan data number sejumlah 1 angka<br>
+        - Ini bisa mempersingkat kita ketika ingin menaikkan data</p>
+    <hr>
+    <h2 id="operator-increment-dan-decrement">Operator Increment dan Decrement</h2>
+    <table border="1" width="100%">
+        <tr>
+            <th>Contoh</th>
+            <th>Name</th>
+            <th>Efek</th>
+        </tr>
+        <tr>
+            <td>$a++</td>
+            <td>Post increment</td>
+            <td>Kembalikan $a lalu naikkan 1 angka</td>
+        </tr>
+        <tr>
+            <td>++$a</td>
+            <td>Pre increment</td>
+            <td>Naikkan $a satu angka, lalu kembalikan $a</td>
+        </tr>
+        <tr>
+            <td>$a--</td>
+            <td>Post decrement</td>
+            <td>Kembalikan $a lalu turunkan 1 angka</td>
+        </tr>
+        <tr>
+            <td>--$a</td>
+            <td>Pre decrement</td>
+            <td>Turunkan $a satu angka, lalu kembalikan $a</td>
+        </tr>
+    </table>
+    <hr>
+    <h2 id="kode--operator-increment-dan-decrement">Kode : Operator Increment dan Decrement</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$a</span> = <span class="hljs-number">10</span>;
+<span class="hljs-variable">$b</span> = ++<span class="hljs-variable">$a</span>;
+
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$b</span>);
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$a</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\15\1.webp" alt="1"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reference</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="reference">Reference</h1>
+    <h2 id="apa-itu-reference">Apa itu Reference?</h2>
+    <ul>
+        <li>Reference adalah mengakses variable yang sama dengan nama variable yang berbeda</li>
+        <li>Reference di PHP tidak sama dengan reference di bahasa pemrograman seperti C / C++ yang memiliki fitur
+            pointer</li>
+        <li>Analogi Reference itu seperti file, jika variable adalah file, dan value nya adalah isi file nya, maka
+            reference adalah membuat shortcut (di Windows) atau alias (di Linux / Mac) terhadap file yang sama</li>
+        <li>Saat kita mengubah isi value dari reference, maka secara otomatis value variable aslinya pun berubah
+        </li>
+        <li>Untuk membuat reference terhadap variable, kita bisa menggunakan karakter &amp; Assign By Reference</li>
+        <li>Pertama, PHP Reference bisa memungkinkan kita bisa membuat beberapa variable menuju ke value yang sama
+        </li>
+    </ul>
+    <hr>
+    <h2 id="kode--assign-by-reference">Kode : Assign By Reference</h2>
+    <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;Faizal&quot;</span>;
+
+<span class="hljs-variable">$otherName</span> = &amp;<span class="hljs-variable">$name</span>;
+
+<span class="hljs-variable">$otherName</span> = <span class="hljs-string">&quot;Syiber&quot;</span>;
+
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$name</span> . PHP_EOL;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\43\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="pass-by-reference">Pass By Reference</h2>
+    <ul>
+        <li>Selanjutnya yang bisa dilakukan di PHP adalah, mengirim data ke function dengan reference</li>
+    </ul>
+    <hr>
+    <h2 id="kode--pass-by-reference">Kode : Pass By Reference</h2>
+    <h3 id="tanpa-reference">Tanpa Reference</h3>
+    <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$value</span></span>) </span>{
+    <span class="hljs-variable">$value</span>++;
+}
+
+<span class="hljs-variable">$counter</span> = <span class="hljs-number">1</span>;
+<span class="hljs-title function_ invoke__">increment</span>(<span class="hljs-variable">$counter</span>);
+
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$counter</span>;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\43\2.webp" alt="2"></p>
+    <h3 id="menggunakan-reference">Menggunakan Reference</h3>
+    <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> &amp;<span class="hljs-variable">$value</span></span>) </span>{
+    <span class="hljs-variable">$value</span>++;
+}
+
+<span class="hljs-variable">$counter</span> = <span class="hljs-number">1</span>;
+<span class="hljs-title function_ invoke__">increment</span>(<span class="hljs-variable">$counter</span>);
+
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$counter</span>;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\43\3.webp" alt="3"></p>
+    <hr>
+    <h2 id="returning-references">Returning References</h2>
+    <ul>
+        <li>PHP juga bisa mengembalikan reference pada function</li>
+        <li>Namun hati-hati, gunakan fitur ini jika memang ada alasannya, karena fitur ini bisa membingungkan</li>
+    </ul>
+    <hr>
+    <h2 id="kode--returning-references">Kode : Returning References</h2>
+    <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> &amp;<span class="hljs-title">getValue</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">static</span> <span class="hljs-variable">$value</span> = <span class="hljs-number">100</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$value</span>;
+}
+
+<span class="hljs-variable">$a</span> = &amp;<span class="hljs-title function_ invoke__">getValue</span>();
+<span class="hljs-variable">$a</span> = <span class="hljs-number">200</span>;
+
+<span class="hljs-variable">$b</span> = &amp;<span class="hljs-title function_ invoke__">getValue</span>();
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$b</span> . PHP_EOL;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\43\4.webp" alt="4"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

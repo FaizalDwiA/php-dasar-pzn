@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>If Statement</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="if-statement">If Statement</h1>
+    <h2 id="if-statement-1">If Statement</h2>
+    <ul>
+        <li>Dalam PHP, if adalah salah satu kata kunci yang digunakan untuk percabangan</li>
+        <li>Percabangan artinya kita bisa mengeksekusi kode program tertentu ketika suatu kondisi terpenuhi</li>
+        <li>Hampir di semua bahasa pemrograman mendukung if expression</li>
+    </ul>
+    <hr>
+    <h2 id="syntax-if-statement">Syntax If Statement</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">if</span>(expression)
+    statement;
+
+<span class="hljs-keyword">if</span>(expression) {
+    statement1;
+    statement2;
+}
+</code></pre>
+    <hr>
+    <h2 id="kode--if-statement">Kode : If Statement</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$nilai</span> = <span class="hljs-number">70</span>;
+<span class="hljs-variable">$absen</span> = <span class="hljs-number">90</span>;
+
+<span class="hljs-keyword">if</span>(<span class="hljs-variable">$nilai</span> &gt;= <span class="hljs-number">75</span> &amp;&amp; <span class="hljs-variable">$absen</span> &gt;= <span class="hljs-number">75</span>) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Anda Lulus&quot;</span> . PHP_EOL;
+}
+</code></pre>
+    <hr>
+    <h2 id="else-statement">Else Statement</h2>
+    <ul>
+        <li>Blok if akan dieksekusi ketika kondisi if bernilai true</li>
+        <li>Kadang kita ingin melakukan eksekusi program tertentu jika kondisi if bernilai false</li>
+        <li>Hal ini bisa dilakukan menggunakan else statement</li>
+    </ul>
+    <hr>
+    <h2 id="syntax-else-statement">Syntax Else Statement</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">if</span>(expression)
+    statement;
+<span class="hljs-keyword">else</span>
+    statement;
+
+<span class="hljs-keyword">if</span>(expression) {
+    statement1;
+    statement2;
+} <span class="hljs-keyword">else</span> {
+    statement;
+}
+</code></pre>
+    <hr>
+    <h2 id="kode--else-statement">Kode : Else Statement</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$nilai</span> = <span class="hljs-number">70</span>;
+<span class="hljs-variable">$absen</span> = <span class="hljs-number">90</span>;
+
+<span class="hljs-keyword">if</span>(<span class="hljs-variable">$nilai</span> &gt;= <span class="hljs-number">75</span> &amp;&amp; <span class="hljs-variable">$absen</span> &gt;= <span class="hljs-number">75</span>) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Anda Lulus&quot;</span> . PHP_EOL;
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Anda Tidak Lulus&quot;</span> . PHP_EOL;
+}
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\19\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="else-if-statement">Else If Statement</h2>
+    <ul>
+        <li>Kada dalam If, kita butuh membuat beberapa kondisi</li>
+        <li>Kasus seperti ini, di PHP kita bisa menggunakan Else If statement</li>
+        <li>Else if di PHP bisa lebih dari satu</li>
+        <li>Kode Else if di php bisa menggunakan “else if” atau “elseif” (digabung)</li>
+    </ul>
+    <hr>
+    <h2 id="syntax-else-if-statement">Syntax Else If Statement</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">if</span>(expression)
+    statement;
+<span class="hljs-keyword">elseif</span>
+    statement;
+<span class="hljs-keyword">else</span>
+    statement;
+
+<span class="hljs-keyword">if</span>(expression) {
+    statement1;
+    statement2;
+} <span class="hljs-keyword">elseif</span> {
+    statement;
+} <span class="hljs-keyword">else</span> {
+    statement;
+}
+</code></pre>
+    <hr>
+    <h2 id="kode--else-if-statement">Kode : Else If Statement</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">if</span> (<span class="hljs-variable">$nilai</span> &gt;= <span class="hljs-number">88</span> &amp;&amp; <span class="hljs-variable">$absen</span> &gt;= <span class="hljs-number">80</span>) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Nilai Anda A&quot;</span> . PHP_EOL;
+} <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$nilai</span> &gt;= <span class="hljs-number">70</span> &amp;&amp; <span class="hljs-variable">$absen</span> &gt;= <span class="hljs-number">70</span>) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Nilai Anda B&quot;</span> . PHP_EOL;
+} <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$nilai</span> &gt;= <span class="hljs-number">60</span> &amp;&amp; <span class="hljs-variable">$absen</span> &gt;= <span class="hljs-number">60</span>) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Nilai Anda C&quot;</span> . PHP_EOL;
+} <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$nilai</span> &gt;= <span class="hljs-number">50</span> &amp;&amp; <span class="hljs-variable">$absen</span> &gt;= <span class="hljs-number">50</span>) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Nilai Anda D&quot;</span> . PHP_EOL;
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Nilai Anda E&quot;</span> . PHP_EOL;
+}
+</code></pre>
+    <hr>
+    <h2 id="syntax-alternatif">Syntax Alternatif</h2>
+    <ul>
+        <li>Selain menggunakan {} (kurung kurawal), PHP juga menyediakan syntax alternatif untuk menggunakan if, yaitu
+            dengan menggunakan : (titik dua)</li>
+        <li>Namun untuk menggunakan ini, kita harus menggunakan kata kunci endif diakhir if statement</li>
+    </ul>
+    <hr>
+    <h2 id="kode--if-statement-dengan-colon">Kode : If Statement Dengan Colon</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">if</span> (<span class="hljs-variable">$nilai</span> &gt;= <span class="hljs-number">88</span> &amp;&amp; <span class="hljs-variable">$absen</span> &gt;= <span class="hljs-number">80</span>) :
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Nilai Anda A&quot;</span> . PHP_EOL;
+<span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$nilai</span> &gt;= <span class="hljs-number">70</span> &amp;&amp; <span class="hljs-variable">$absen</span> &gt;= <span class="hljs-number">70</span>) :
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Nilai Anda B&quot;</span> . PHP_EOL;
+<span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$nilai</span> &gt;= <span class="hljs-number">60</span> &amp;&amp; <span class="hljs-variable">$absen</span> &gt;= <span class="hljs-number">60</span>) :
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Nilai Anda C&quot;</span> . PHP_EOL;
+<span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$nilai</span> &gt;= <span class="hljs-number">50</span> &amp;&amp; <span class="hljs-variable">$absen</span> &gt;= <span class="hljs-number">50</span>) :
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Nilai Anda D&quot;</span> . PHP_EOL;
+<span class="hljs-keyword">else</span> :
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Nilai Anda E&quot;</span> . PHP_EOL;
+<span class="hljs-keyword">endif</span>;
+</code></pre>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

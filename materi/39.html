@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Array Function</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="array-function">Array Function</h1>
+    <h2 id="array-function-1">Array Function</h2>
+    <ul>
+        <li>Di PHP juga terdapat banyak sekali function bawaan yang bisa kita gunakan untuk memanipulasi data Array</li>
+        <li><a href="https://www.php.net/manual/en/ref.array.php">https://www.php.net/manual/en/ref.array.php</a></li>
+    </ul>
+    <hr>
+    <h2 id="contoh-array-function">Contoh Array Function</h2>
+    <table border="1" width="100%">
+        <tr>
+            <th>Function</th>
+            <th>Keterangan</th>
+        </tr>
+        <tr>
+            <td>array_keys()</td>
+            <td>Mengambil semua keys milik array</td>
+        </tr>
+        <tr>
+            <td>array_values()</td>
+            <td>Mengambil semua values milik array</td>
+        </tr>
+        <tr>
+            <td>array_map()</td>
+            <td>Mengubah semua data array dengan callback</td>
+        </tr>
+        <tr>
+            <td>sort()</td>
+            <td>Mengurutkan array</td>
+        </tr>
+        <tr>
+            <td>rsort()</td>
+            <td>Mengurutkan array terbalik</td>
+        </tr>
+        <tr>
+            <td>shuffle()</td>
+            <td>Mengubah posisi data di array secara random</td>
+        </tr>
+    </table>
+    ---
+    <h2 id="kode--array-function">Kode : Array Function</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$data</span> = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>];
+
+<span class="hljs-comment">// $mapFunction = fn(int $value) =&gt; $value * 10;</span>
+<span class="hljs-comment">// $dataResult = array_map($mapFunction, $data);</span>
+<span class="hljs-comment">// var_dump($dataResult);</span>
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">array_map</span>(fn(<span class="hljs-variable">$data</span>) =&gt; <span class="hljs-variable">$data</span> * <span class="hljs-number">10</span>, <span class="hljs-variable">$data</span>));
+
+<span class="hljs-title function_ invoke__">rsort</span>(<span class="hljs-variable">$data</span>);
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$data</span>);
+
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">array_keys</span>(<span class="hljs-variable">$data</span>));
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">array_values</span>(<span class="hljs-variable">$data</span>));
+
+<span class="hljs-variable">$person</span> = [
+    <span class="hljs-string">&quot;first_name&quot;</span> =&gt; <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-string">&quot;last_name&quot;</span> =&gt; <span class="hljs-string">&quot;Alfarizi&quot;</span>
+];
+
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">array_keys</span>(<span class="hljs-variable">$person</span>));
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">array_values</span>(<span class="hljs-variable">$person</span>));
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\39\1.webp" alt="1"><br>
+        <img src="..\assets\img\39\2.webp" alt="2">
+    </p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

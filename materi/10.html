@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tipe Data Array</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="tipe-data-array">Tipe Data Array</h1>
+    <h2 id="tipe-data-array-1">Tipe Data Array</h2>
+    <ul>
+        <li>Array adalah tipe data yang berisikan kosong atau banyak data</li>
+        <li>Array di PHP bisa berisikan data dengan jenis berbeda-beda</li>
+        <li>Array di PHP memiliki panjang dinamis, artinya kita bisa menambah data ke Array sebanyak-banyaknya, tidak
+            dibatasi kapasitasnya</li>
+    </ul>
+    <hr>
+    <h2 id="cara-kerja-array">Cara Kerja Array</h2>
+    <p><img src="..\assets\img\10\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="kode--membuat-array">Kode : Membuat Array</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$values</span> = <span class="hljs-keyword">array</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$values</span>);
+
+<span class="hljs-variable">$names</span> = [<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Dwi&quot;</span>, <span class="hljs-string">&quot;Alfarizi&quot;</span>];
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$names</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\10\2.webp" alt="2"></p>
+    <hr>
+    <h2 id="operasi-array">Operasi Array</h2>
+    <table border="1" width="100%">
+        <tr>
+            <th>Operasi</th>
+            <th>Keterangan</th>
+        </tr>
+        <tr>
+            <td>$array[index]</td>
+            <td>Mengakses data di array pada nomor index</td>
+        </tr>
+        <tr>
+            <td>$array[index] = value</td>
+            <td>Mengubah data di array pada nomor index dengan value baru</td>
+        </tr>
+        <tr>
+            <td>$array[] = value</td>
+            <td>Menambah data di array pada posisi paling belakang</td>
+        </tr>
+        <tr>
+            <td>unset($array[index])</td>
+            <td>Menghapus data di array, index otomatis hilang dari array</td>
+        </tr>
+        <tr>
+            <td>count($array)</td>
+            <td>Mengambil total data di array</td>
+        </tr>
+    </table>
+    <hr>
+    <h2 id="kode--operasi-array">Kode : Operasi Array</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$names</span> = [<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Dwi&quot;</span>, <span class="hljs-string">&quot;Alfarizi&quot;</span>];
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$names</span>[<span class="hljs-number">0</span>]);
+<span class="hljs-variable">$names</span>[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;Faizal&quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$names</span>);
+<span class="hljs-keyword">unset</span>(<span class="hljs-variable">$names</span>[<span class="hljs-number">1</span>]);
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$names</span>);
+<span class="hljs-variable">$names</span>[] = <span class="hljs-string">&quot;Faizal&quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$names</span>);
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">$names</span>));
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\10\3.webp" alt="3"></p>
+    <hr>
+    <h2 id="array-sebagai-map">Array Sebagai Map</h2>
+    <ul>
+        <li>Biasanya di kebanyakan bahasa pemrograman, terdapat tipe data bernama Map, yaitu asosiasi antara key dan
+            value</li>
+        <li>Namun di PHP, Map bisa dibuat menggunakan Array</li>
+        <li>Secara default Array akan menggunakan index (number) sebagai key dan value nya kita bisa bebas memasukkan
+            data ke dalam Array</li>
+        <li>Namun jika kita ingin, kita juga bisa mengubah index nya tidak harus menggunakan number, bisa gunakan tipe
+            data lain, seperti string misal nya</li>
+        <li>Hal tersebut terlihat seperti Map di bahasa pemrograman lain</li>
+    </ul>
+    <hr>
+    <h2 id="kode--membuat-map">Kode : Membuat Map</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$faizal</span> = <span class="hljs-keyword">array</span>(
+    <span class="hljs-string">&quot;id&quot;</span> =&gt;  <span class="hljs-string">&quot;faizal&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span> =&gt; <span class="hljs-string">&quot;Faizal Dwi Alfarizi&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span> =&gt; <span class="hljs-number">20</span>
+);
+
+<span class="hljs-variable">$syiber</span> = [
+    <span class="hljs-string">&quot;id&quot;</span> =&gt; <span class="hljs-string">&quot;syiber&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span> =&gt; <span class="hljs-string">&quot;Black Syiber&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span> =&gt; <span class="hljs-number">23</span>
+];
+</code></pre>
+    <hr>
+    <h2 id="array-di-dalam-array">Array di dalam Array</h2>
+    <ul>
+        <li>Seperti dijelaskan di awal, Array di PHP bisa berisikan data apapun</li>
+        <li>Sehingga kita juga bisa membuat array di dalam array jika memang dibutuhkan</li>
+    </ul>
+    <hr>
+    <h2 id="kode--array-di-dalam-array">Kode : Array di dalam Array</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$faizal</span> = <span class="hljs-keyword">array</span>(
+    <span class="hljs-string">&quot;id&quot;</span> =&gt;  <span class="hljs-string">&quot;faizal&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span> =&gt; <span class="hljs-string">&quot;Faizal Dwi Alfarizi&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span> =&gt; <span class="hljs-number">20</span>,
+    <span class="hljs-string">&quot;address&quot;</span> =&gt; [
+        <span class="hljs-string">&quot;city&quot;</span> =&gt; <span class="hljs-string">&quot;Solo&quot;</span>,
+        <span class="hljs-string">&quot;country&quot;</span> =&gt; <span class="hljs-string">&quot;Indonesia&quot;</span>
+    ]
+);
+</code></pre>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

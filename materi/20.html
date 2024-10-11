@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Switch Statement</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        <link rel="stylesheet" href="../assets/css/katex.min.css">
+<link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+<link rel="stylesheet" href="../assets/css/markdown.min.css">
+<link rel="stylesheet" href="../assets/css/highlight.min.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="switch-statement">Switch Statement</h1>
+<h2 id="switch-statement-1">Switch Statement</h2>
+<ul>
+<li>Kadang kita hanya butuh menggunakan kondisi sederhana di if statement, seperti hanya menggunakan perbandingan ==</li>
+<li>Switch adalah statement percabangan yang sama dengan if, namun lebih sederhana cara pembuatannya</li>
+<li>Kondisi di switch statement hanya untuk perbandingan ==</li>
+</ul>
+<hr>
+<h2 id="kode--switch-statement">Kode : Switch Statement</h2>
+<pre><code class="language-php"><span class="hljs-keyword">switch</span>(<span class="hljs-variable">$nilai</span>) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;A&quot;</span>:
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Anda lulus dengan sangat baik &quot;</span> . PHP_EOL;
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;B&quot;</span>:
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;C&quot;</span>:
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Anda lulus&quot;</span> . PHP_EOL;
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;D&quot;</span>:
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Anda tidak lulus&quot;</span> . PHP_EOL;
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Mungkin Anda Salah Jurusan&quot;</span> . PHP_EOL;
+}
+</code></pre>
+<hr>
+<h2 id="syntax-alternatif">Syntax Alternatif</h2>
+<ul>
+<li>Sama seperti if statement, switch statement juga bisa tanpa menggunakan {} (kurung kurawal)</li>
+<li>Namun diakhir switch statement, kita harus menambahkan kata kunci endswitch</li>
+</ul>
+<hr>
+<h2 id="kode--switch-statement-syntax-alternatif">Kode : Switch Statement Syntax Alternatif</h2>
+<pre><code class="language-php"><span class="hljs-keyword">switch</span>(<span class="hljs-variable">$nilai</span>) :
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;A&quot;</span>:
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Anda lulus dengan sangat baik &quot;</span> . PHP_EOL;
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;B&quot;</span>:
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;C&quot;</span>:
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Anda lulus&quot;</span> . PHP_EOL;
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;D&quot;</span>:
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Anda tidak lulus&quot;</span> . PHP_EOL;
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Mungkin Anda Salah Jurusan&quot;</span> . PHP_EOL;
+<span class="hljs-keyword">endswitch</span>;
+</code></pre>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

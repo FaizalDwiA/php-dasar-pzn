@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulasi String</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="manipulasi-string">Manipulasi String</h1>
+    <h2 id="dot-operator">Dot Operator</h2>
+    <ul>
+        <li>Dot (titik) operator adalah operator yang bisa kita gunakan untuk menambahkan string dengan data lain (bisa
+            string atau tipe data lainnya)</li>
+        <li>Sebenarnya kita bisa menggunakan + (plus) untuk menambahkan string, namun jika kita coba tambahkan string
+            dengan tipe data number, maka akan terjadi error. Oleh karena itu direkomendasikan menggunakan . (dot) untuk
+            menambahkan string dengan data lain</li>
+    </ul>
+    <hr>
+    <h2 id="kode--dot-operator">Kode : Dot Operator</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>;
+
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Nama : &quot;</span> . <span class="hljs-variable">$name</span> . PHP_EOL;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Nilai : &quot;</span> . <span class="hljs-number">100</span> . <span class="hljs-string">&quot;\n&quot;</span>;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\18\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="konversi-ke-number-dan-sebaliknya">Konversi ke Number dan Sebaliknya</h2>
+    <ul>
+        <li>Kadang kita sering melakukan konversi tipe data dari string ke number (int / float) atau sebaliknya</li>
+        <li>Di PHP untuk melakukan konversi cukup mudah, kita hanya perlu menggunakan tanda kurung (tipe data )</li>
+        <li>Tipe data untuk string adalah string, untuk number bisa menggunakan int untuk integer dan float untuk
+            floating point</li>
+    </ul>
+    <hr>
+    <h2 id="konversi-ke-number-dan-sebaliknya-1">Konversi ke Number dan Sebaliknya</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$valueString</span> = (<span class="hljs-keyword">string</span>)<span class="hljs-number">100</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$valueString</span>);
+
+<span class="hljs-variable">$valueInt</span> = (<span class="hljs-keyword">int</span>)<span class="hljs-string">&quot;100&quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$valueInt</span>);
+
+<span class="hljs-variable">$valueFloat</span> = (<span class="hljs-keyword">float</span>)<span class="hljs-string">&quot;100.11&quot;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$valueFloat</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\18\2.webp" alt="2"></p>
+    <hr>
+    <h2 id="mengakses-karakter">Mengakses Karakter</h2>
+    <ul>
+        <li>String di PHP seperti array karakter, dimana kita bisa mengakses data tiap karakternya menggunakan kurung
+            siku</li>
+        <li>Sama seperti di array, index pertama dimulai dari 0</li>
+        <li>Jika kita mengakses index melebihi karakter di string, maka akan terjadi error</li>
+    </ul>
+    <hr>
+    <h2 id="kode--mengakses-karakter">Kode : Mengakses Karakter</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;Faizal&quot;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$name</span>[<span class="hljs-number">0</span>] . PHP_EOL;
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$name</span>[<span class="hljs-number">1</span>] . PHP_EOL;
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$name</span>[<span class="hljs-number">2</span>] . PHP_EOL;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <h2 id=""><img src="..\assets\img\18\3.webp" alt="3"></h2>
+    <h2 id="variable-parsing">Variable Parsing</h2>
+    <ul>
+        <li>Khusus string menggunakan double quote atau heredoc, kita bisa menggunakan karakter $ untuk mengakses
+            variable.</li>
+        <li>Ini memudahkan ketika kita ingin menggabungkan string dengan variable.</li>
+        <li>Cara penggunaanya adalah dengan menggunakan karakter $ lalu diikuti dengan nama variable nya.</li>
+    </ul>
+    <hr>
+    <h2 id="kode--variable-parsing">Kode : Variable Parsing</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;Faizal&quot;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">$name</span>, Selamat Belajar&quot;</span> . PHP_EOL;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\18\4.webp" alt="4"></p>
+    <hr>
+    <h2 id="curly-brace">Curly Brace</h2>
+    <ul>
+        <li>Kadang kita butuh menggabungkan variable dengan string tanpa ada spasi. Hal ini akan menyulitkan jika hanya
+            menggunakan variable parsing</li>
+        <li>Untungnya di PHP kita bisa menambahkan kurung kurawal sebelum menggunakan variable parsing</li>
+    </ul>
+    <hr>
+    <h2 id="kode--curly-brace">Kode : Curly Brace</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$var</span> = <span class="hljs-string">&quot;var&quot;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;This is <span class="hljs-subst">{$var}</span>s&quot;</span> . PHP_EOL;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\18\5.webp" alt="5"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

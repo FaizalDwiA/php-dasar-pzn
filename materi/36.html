@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recursive Function</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="recursive-function">Recursive Function</h1>
+    <h2 id="recursive-function-1">Recursive Function</h2>
+    <ul>
+        <li>Recursive function adalah kemampuan function memanggil function dirinya sendiri</li>
+        <li>Kadang memang ada banyak problem, yang lebih mudah diselesaikan menggunakan recursive function, seperti
+            contohnya kasus factorial</li>
+    </ul>
+    <hr>
+    <h2 id="kode--factorial-loop">Kode : Factorial Loop</h2>
+    <pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">factorialLoop</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$value</span></span>) : <span class="hljs-title">int</span> </span>{
+    <span class="hljs-variable">$total</span> = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-variable">$i</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$i</span> &lt;= <span class="hljs-variable">$value</span>; <span class="hljs-variable">$i</span>++) {
+        <span class="hljs-variable">$total</span> *= <span class="hljs-variable">$i</span>;
+        <span class="hljs-comment">// $total = $total * $i;</span>
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$total</span>;
+}
+
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">factorialLoop</span>(<span class="hljs-number">5</span>));
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">1</span> * <span class="hljs-number">2</span> * <span class="hljs-number">3</span> * <span class="hljs-number">4</span> * <span class="hljs-number">5</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\36\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="kode--factorial-recursive">Kode : Factorial Recursive</h2>
+    <pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">factorialRecursive</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$value</span></span>) : <span class="hljs-title">int</span> </span>{
+    <span class="hljs-keyword">if</span>(<span class="hljs-variable">$value</span> == <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$value</span> * <span class="hljs-title function_ invoke__">factorialRecursive</span>(<span class="hljs-variable">$value</span> - <span class="hljs-number">1</span>);
+    }
+}
+
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">factorialRecursive</span>(<span class="hljs-number">6</span>));
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-number">1</span> * <span class="hljs-number">2</span> * <span class="hljs-number">3</span> * <span class="hljs-number">4</span> * <span class="hljs-number">5</span> * <span class="hljs-number">6</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\36\2.webp" alt="2"></p>
+    <hr>
+    <h2 id="problem-dengan-recursive">Problem Dengan Recursive</h2>
+    <ul>
+        <li>Walaupun recursive function itu sangat menarik, namun kita perlu berhati-hati</li>
+        <li>Jika recursive terlalu dalam, maka akan ada kemungkinan terjadi memory overflow, yaitu error dimana memory
+            terlalu banyak digunakan di PHP</li>
+        <li>Kenapa problem ini bisa terjadi? Karena ketika kita memanggil function, PHP akan menyimpannya dalam stack,
+            jika function tersebut memanggil function lain, maka stack akan menumpuk terus, dan jika terlalu banyak,
+            maka akan membutuhkan konsumsi memory besar, jika sudah melewati batas, maka akan terjadi error memory</li>
+    </ul>
+    <hr>
+    <h2 id="kode--error-stackoverflow">Kode : Error StackOverflow</h2>
+    <pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loop</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$value</span></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$value</span> == <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Selesai&quot;</span> . PHP_EOL;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Loop-<span class="hljs-subst">$value</span>&quot;</span> . PHP_EOL;
+        <span class="hljs-title function_ invoke__">loop</span>(<span class="hljs-variable">$value</span> - <span class="hljs-number">1</span>);
+    }
+}
+
+<span class="hljs-title function_ invoke__">loop</span>(<span class="hljs-number">3000000</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\36\3.webp" alt="3"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

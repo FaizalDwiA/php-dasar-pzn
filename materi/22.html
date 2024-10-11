@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Null Coalescing Operator</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="null-coalescing-operator">Null Coalescing Operator</h1>
+    <h2 id="null-coalescing-operator-1">Null Coalescing Operator</h2>
+    <ul>
+        <li>Sebelumnya kita tahu bahwa data kosong direpresentasikan dengan data NULL di PHP</li>
+        <li>Dan hal yang paling repot di PHP adalah mengecek apakah sebuah data ada atau tidak, dan juga apakah data
+            tersebut isinya null atau bukan</li>
+        <li>Biasanya untuk melakukan itu, kita perlu menggunakan pengecekan if statement dengan function
+            isset($variable)</li>
+        <li>Namun untungnya di php ada null coalescing operator menggunakan tanda ??</li>
+    </ul>
+    <hr>
+    <h2 id="kode--tanpa-null-coalescing-operator">Kode : Tanpa Null Coalescing Operator</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$data</span> = [];
+
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$data</span>[<span class="hljs-string">&#x27;action&#x27;</span>])) {
+    <span class="hljs-variable">$action</span> = <span class="hljs-variable">$data</span>[<span class="hljs-string">&#x27;action&#x27;</span>];
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-variable">$action</span> = <span class="hljs-string">&#x27;nothing&#x27;</span>;
+}
+
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$action</span>;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\22\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="kode--null-coalescing-operator">Kode : Null Coalescing Operator</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$data</span> = [];
+<span class="hljs-variable">$action</span> = <span class="hljs-variable">$data</span>[<span class="hljs-string">&#x27;action&#x27;</span>] ?? <span class="hljs-string">&#x27;nothing&#x27;</span>;
+
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$action</span>;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\22\1.webp" alt="1"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

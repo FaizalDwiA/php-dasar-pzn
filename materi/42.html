@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Variable Scope</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="variable-scope">Variable Scope</h1>
+    <h2 id="variable-scope-1">Variable Scope</h2>
+    <p>Di PHP, kita bisa membuat variable dimanapun yang kita mau</p>
+    <p>Scope variable adalah dibagian mana saja sebuah variable bisa diakses</p>
+    <p>PHP memiliki tiga jenis variable scope<br>
+        - global<br>
+        - local<br>
+        - static</p>
+    <hr>
+    <h2 id="global-scope">Global Scope</h2>
+    <ul>
+        <li>Variable yang dibuat diluar function memiliki scope global</li>
+        <li>Variable di scope global hanya bisa diakses dari luar function</li>
+        <li>Artinya di dalam function, kita tidak bisa mengakses variable di global scope</li>
+    </ul>
+    <hr>
+    <h2 id="kode--variable-global-scope">Kode : Variable Global Scope</h2>
+    <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;Faizal&quot;</span>; <span class="hljs-comment">// global scope</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayName</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$name</span> . PHP_EOL; <span class="hljs-comment">// error</span>
+}
+
+<span class="hljs-title function_ invoke__">sayName</span>();
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\42\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="local-scope">Local Scope</h2>
+    <ul>
+        <li>Variable yang dibuat di dalam function memiliki scope local</li>
+        <li>Variable di scope local hanya bisa diakses dari dalam function itu sendiri</li>
+        <li>Artinya variable tersebut tidak bisa diakses dari luar function ataupun dari function lain</li>
+    </ul>
+    <hr>
+    <h2 id="kode--variable-local-scope">Kode : Variable Local Scope</h2>
+    <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createName</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;Faizal&quot;</span>; <span class="hljs-comment">// local scope</span>
+}
+
+<span class="hljs-title function_ invoke__">createName</span>();
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$name</span> . PHP_EOL;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\42\2.webp" alt="2"></p>
+    <hr>
+    <h2 id="global-keyword">global Keyword</h2>
+    <ul>
+        <li>Namun jika kita ingin mengakses variable diluar function (global scope) dari dalam function, kita bisa
+            menggunakan kata kunci global</li>
+        <li>Dengan menggunakan kata kunci global, maka kita bisa mengakses variable yang ada di global scope dari dalam
+            function</li>
+    </ul>
+    <hr>
+    <h2 id="kode--global-keyword">Kode : global Keyword</h2>
+    <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;Faizal&quot;</span>; <span class="hljs-comment">// global scope</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayName</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">global</span> <span class="hljs-variable">$name</span>; <span class="hljs-comment">// global keyword</span>
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">$name</span>&quot;</span> . PHP_EOL;
+}
+
+<span class="hljs-title function_ invoke__">sayName</span>();
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\42\3.webp" alt="3"></p>
+    <hr>
+    <h2 id="global-variable">$GLOBAL Variable</h2>
+    <ul>
+        <li>Selain menggunakan global keyword, setiap variable yang dibuat di global scope, secara otomatis akan
+            disimpan di dalam array $GLOBAL oleh PHP</li>
+        <li>Jadi kita bisa menggunakan $GLOBAL variable dengan key nama variable nya dari dalam function jika ingin
+            mengakses global variable</li>
+        <li>$GLOBAL adalah variable yang bersifat superglobal, artinya bisa diakses dari scope manapun</li>
+    </ul>
+    <hr>
+    <h2 id="kode--global-variable">Kode : $GLOBAL Variable</h2>
+    <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;Faizal&quot;</span>; <span class="hljs-comment">// global scope</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayName</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">{$GLOBALS[&#x27;name&#x27;]}</span>&quot;</span> . PHP_EOL;
+}
+
+<span class="hljs-title function_ invoke__">sayName</span>();
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\42\3.webp" alt="3"></p>
+    <hr>
+    <h2 id="static-scope">Static Scope</h2>
+    <ul>
+        <li>Secara default local variable itu siklus hidupnya hanya sebatas function nya dieksekusi</li>
+        <li>Jika sebuah function selesai dieksekusi, maka siklus hidup local variable nya selesai</li>
+        <li>PHP memiliki scope yang bernama static</li>
+        <li>Static scope hanya bisa di set ke local variable</li>
+        <li>Saat kita membuat sebuah local variable menjadi static, maka siklus hidupnya tidak akan berhenti ketika
+            sebuah function selesai dieksekusi</li>
+        <li>Artinya jika function tersebut dieksekusi lagi, maka static variable tersebut akan memiliki value dari
+            sebelumnya</li>
+    </ul>
+    <hr>
+    <h2 id="kode--static-scope">Kode : Static Scope</h2>
+    <h3 id="tanpa-static">Tanpa Static</h3>
+    <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-variable">$counter</span> = <span class="hljs-number">1</span>;
+
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Counter = <span class="hljs-subst">$counter</span>&quot;</span> . PHP_EOL;
+
+    <span class="hljs-variable">$counter</span>++;
+}
+
+<span class="hljs-title function_ invoke__">increment</span>();
+<span class="hljs-title function_ invoke__">increment</span>();
+<span class="hljs-title function_ invoke__">increment</span>();
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\42\4.webp" alt="4"></p>
+    <h3 id="menggunakan-stacic">Menggunakan Stacic</h3>
+    <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">static</span> <span class="hljs-variable">$counter</span> = <span class="hljs-number">1</span>; <span class="hljs-comment">// static scope</span>
+
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Counter = <span class="hljs-subst">$counter</span>&quot;</span> . PHP_EOL;
+
+    <span class="hljs-variable">$counter</span>++;
+}
+
+<span class="hljs-title function_ invoke__">increment</span>();
+<span class="hljs-title function_ invoke__">increment</span>();
+<span class="hljs-title function_ invoke__">increment</span>();
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\42\5.webp" alt="5"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

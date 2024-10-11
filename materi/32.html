@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Variable Function</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="variable-function">Variable Function</h1>
+    <h2 id="variable-function-1">Variable Function</h2>
+    <ul>
+        <li>PHP mendukung konsep yang bernama variable function</li>
+        <li>Variable function adalah kemampuan memanggil sebuah function dari value yang terdapat di sebuah variable
+        </li>
+        <li>Untuk menggunakan variable function, kita bisa secara langsung memanggil $namaVariable(), jika ingin
+            menambahkan argument, kita bisa menggunakan $namaVariable(argument)</li>
+    </ul>
+    <hr>
+    <h2 id="kode--variable-function">Kode : Variable Function</h2>
+    <pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)
+</span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;FOO&quot;</span> . PHP_EOL;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"></span>)
+</span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;BAR&quot;</span> . PHP_EOL;
+}
+
+<span class="hljs-variable">$functionName</span> = <span class="hljs-string">&quot;foo&quot;</span>;
+<span class="hljs-variable">$functionName</span>();
+
+<span class="hljs-variable">$functionName</span> = <span class="hljs-string">&quot;bar&quot;</span>;
+<span class="hljs-variable">$functionName</span>();
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\32\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="kode--penggunaan-variable-function">Kode : Penggunaan Variable Function</h2>
+    <pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$filter</span></span>) </span>{
+    <span class="hljs-variable">$finalName</span> = <span class="hljs-variable">$filter</span>(<span class="hljs-variable">$name</span>);
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">$finalName</span>&quot;</span> . PHP_EOL;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sampleFunction</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span></span>) : <span class="hljs-title">string</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Sample <span class="hljs-subst">$name</span>&quot;</span>;
+}
+
+<span class="hljs-title function_ invoke__">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;sampleFunction&quot;</span>);
+<span class="hljs-title function_ invoke__">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;strtoupper&quot;</span>);
+<span class="hljs-title function_ invoke__">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;strtolower&quot;</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\32\2.webp" alt="2"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

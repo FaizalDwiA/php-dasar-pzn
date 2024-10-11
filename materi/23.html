@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>For Loop</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="for-loop">For Loop</h1>
+    <h2 id="for-loop-1">For Loop</h2>
+    <ul>
+        <li>For adalah salah satu kata kunci yang bisa digunakan untuk melakukan perulangan</li>
+        <li>Blok kode yang terdapat di dalam for akan selalu diulangi selama kondisi for terpenuhi</li>
+    </ul>
+    <hr>
+    <h2 id="sintak-perulangan-for">Sintak Perulangan For</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">for</span>(init statement; kondisi; post statement){
+ <span class="hljs-comment">// block perulangan</span>
+}
+</code></pre>
+    <ul>
+        <li>Init statement akan dieksekusi hanya sekali di awal sebelum perulangan</li>
+        <li>Kondisi akan dilakukan pengecekan dalam setiap perulangan, jika true perulangan akan dilakukan, jika false
+            perulangan akan berhenti</li>
+        <li>Post statement akan dieksekusi setiap kali diakhir perulangan</li>
+        <li>Init statement, Kondisi dan Post Statement tidak wajib diisi, jika Kondisi tidak diisi, berarti kondisi
+            selalu bernilai true</li>
+    </ul>
+    <hr>
+    <h2 id="kode--perulangan-tanpa-henti">Kode : Perulangan Tanpa Henti</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">for</span>(; ;) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello For Loop&quot;</span> . PHP_EOL;
+}
+</code></pre>
+    <hr>
+    <h2 id="kode--perulangan-dengan-kondisi">Kode : Perulangan Dengan Kondisi</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$counter</span> = <span class="hljs-number">1</span>;
+
+<span class="hljs-keyword">for</span>(; <span class="hljs-variable">$counter</span> &lt;= <span class="hljs-number">10</span>;) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello For Loop : &quot;</span> . <span class="hljs-variable">$counter</span> . PHP_EOL;
+    <span class="hljs-variable">$counter</span>++;
+}
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\23\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="kode--perulangan-dengan-init-statement">Kode : Perulangan Dengan Init Statement</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">for</span> (<span class="hljs-variable">$counter</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$counter</span> &lt;= <span class="hljs-number">10</span>; ) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello For Loop : &quot;</span> . <span class="hljs-variable">$counter</span> . PHP_EOL;
+    <span class="hljs-variable">$counter</span>++;
+}
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\23\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="kode--perulangan-dengan-post-statement">Kode : Perulangan Dengan Post Statement</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">for</span> (<span class="hljs-variable">$counter</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$counter</span> &lt;= <span class="hljs-number">10</span>; <span class="hljs-variable">$counter</span>++) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello For Loop : &quot;</span> . <span class="hljs-variable">$counter</span> . PHP_EOL;
+}
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\23\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="kode--syntax-alternative-for-loop">Kode : Syntax Alternative For Loop</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">for</span> (<span class="hljs-variable">$counter</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$counter</span> &lt;= <span class="hljs-number">10</span>; <span class="hljs-variable">$counter</span>++) :
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello For Loop : &quot;</span> . <span class="hljs-variable">$counter</span> . PHP_EOL;
+<span class="hljs-keyword">endfor</span>;
+</code></pre>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

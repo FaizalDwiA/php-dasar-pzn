@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>goto Operator</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="goto-operator">goto Operator</h1>
+    <h2 id="goto-operator-1">goto Operator</h2>
+    <ul>
+        <li>Salah satu fitur yang sebenarnya jarang sekali digunakan di PHP adalah goto operator</li>
+        <li>Kenapa jarang digunakan karena jika terlalu banyak menggunakan goto operator, kode program aplikasinya akan
+            mudah membingungkan yang membaca kode nya</li>
+        <li>goto adalah fitur dimana kita bisa loncat ke kode program sesuai dengan keinginan kita</li>
+        <li>Agar goto bisa loncat ke kode program, kita harus membuat label di php dengan menggunakan nama label lalu
+            diakhiri : (colon)</li>
+    </ul>
+    <hr>
+    <h2 id="kode--goto-operator">Kode : goto Operator</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">goto</span> a;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello A&quot;</span> . PHP_EOL;
+
+a:
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello A&quot;</span> . PHP_EOL;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\28\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="kode--goto-operator-di-loop">Kode : goto Operator di Loop</h2>
+    <pre><code class="language-php"><span class="hljs-variable">$counter</span> = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;While Loop <span class="hljs-subst">$counter</span>&quot;</span> . PHP_EOL;
+    <span class="hljs-variable">$counter</span>++;
+    <span class="hljs-keyword">if</span>(<span class="hljs-variable">$counter</span> &gt; <span class="hljs-number">10</span>) {
+        <span class="hljs-keyword">goto</span> end;
+    }
+}
+
+end:
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;End Loop&quot;</span>;
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\28\2.webp" alt="2"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

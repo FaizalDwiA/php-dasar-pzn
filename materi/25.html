@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Do While Loop</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        <link rel="stylesheet" href="../assets/css/katex.min.css">
+<link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+<link rel="stylesheet" href="../assets/css/markdown.min.css">
+<link rel="stylesheet" href="../assets/css/highlight.min.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="do-while-loop">Do While Loop</h1>
+<h2 id="do-while-loop-1">Do While Loop</h2>
+<ul>
+<li>Do While loop adalah perulangan yang mirip dengan while</li>
+<li>Perbedaannya hanya pada pengecekan kondisi</li>
+<li>Pengecekan kondisi di while loop dilakukan di awal sebelum perulangan dilakukan, sedangkan di do while loop dilakukan setelah perulangan dilakukan</li>
+<li>Oleh karena itu dalam do while loop, minimal pasti sekali perulangan dilakukan walaupun kondisi tidak bernilai true</li>
+</ul>
+<hr>
+<h2 id="kode--do-while-loop">Kode : Do While Loop</h2>
+<pre><code class="language-php"><span class="hljs-variable">$counter</span> = <span class="hljs-number">100</span>;
+
+<span class="hljs-keyword">do</span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello While Loop : &quot;</span> . <span class="hljs-variable">$counter</span> . PHP_EOL;
+    <span class="hljs-variable">$counter</span>++;
+} <span class="hljs-keyword">while</span> (<span class="hljs-variable">$counter</span> &lt;= <span class="hljs-number">10</span>);
+</code></pre>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

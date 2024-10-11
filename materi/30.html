@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Function Argument</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="function-argument">Function Argument</h1>
+    <h2 id="function-argument-1">Function Argument</h2>
+    <ul>
+        <li>Kita bisa mengirim informasi ke function yang ingin kita panggil</li>
+        <li>Untuk melakukan hal tersebut, kita perlu menambahkan argument atau parameter di function yang sudah kita
+            buat</li>
+        <li>Cara membuat argument sama seperti cara membuat variabel</li>
+        <li>Argument ditempatkan di dalam kurung () di deklarasi function</li>
+        <li>Argument bisa lebih dari satu, jika lebih dari satu, harus dipisah menggunakan tanda koma</li>
+    </ul>
+    <hr>
+    <h2 id="kode--function-argument">Kode : Function Argument</h2>
+    <pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">$name</span>&quot;</span> . PHP_EOL;
+}
+
+<span class="hljs-title function_ invoke__">sayHello</span>();
+<span class="hljs-title function_ invoke__">sayHello</span>();
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\30\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="default-argument-value">Default Argument Value</h2>
+    <ul>
+        <li>PHP mendukung default argument value</li>
+        <li>Fitur ini memungkinkan jika ketika kita memanggil function tidak memasukkan parameter, kita bisa menentukan
+            data default nya apa</li>
+    </ul>
+    <hr>
+    <h2 id="kode--default-argument-value">Kode : Default Argument Value</h2>
+    <pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"><span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;Anonymous&quot;</span></span>) </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">$name</span>&quot;</span> . PHP_EOL;
+}
+
+<span class="hljs-title function_ invoke__">sayHello</span>();
+<span class="hljs-title function_ invoke__">sayHello</span>(<span class="hljs-string">&quot;Dwi&quot;</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\30\2.webp" alt="2"></p>
+    <hr>
+    <h2 id="kesalahan-default-argument-value">Kesalahan Default Argument Value</h2>
+    <ul>
+        <li>Default argument value bisa disimpan argument manapun</li>
+        <li>Namun jika argument lebih dari satu, dan kita menyimpan default argument value di parameter awal, maka itu
+            kurang berguna</li>
+    </ul>
+    <hr>
+    <h2 id="kode--kesalahan-default-argument-value">Kode : Kesalahan Default Argument Value</h2>
+    <pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"><span class="hljs-variable">$firstname</span> = <span class="hljs-string">&quot;Anonymous&quot;</span>, <span class="hljs-variable">$lastname</span></span>) </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">$firstname</span> <span class="hljs-subst">$lastname</span>&quot;</span> . PHP_EOL;
+}
+
+<span class="hljs-title function_ invoke__">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+</code></pre>
+    <hr>
+    <h2 id="type-declaration">Type Declaration</h2>
+    <ul>
+        <li>Sama seperti variable, argument di PHP bisa kita masukkan data yang dinamis</li>
+        <li>Kadang terlalu dinamis juga menyulitkan jika ternyata kita hanya ingin membuat function yang menggunakan
+            argument dengan tipe data tertentu</li>
+        <li>Untungnya di PHP, kita bisa menambahkan type data di argument, sehingga PHP akan melakukan pengecekan ketika
+            kita mengirim value ke function tersebut</li>
+        <li>Jika tipe data value tidak sesuai, maka akan terjadi error</li>
+        <li>Secara default PHP akan melakukan percobaan konversi tipe data secara otomatis, misal jika kita menggunakan
+            tipe int, tapi kita mengirim string, maka PHP akan otomatis mengkonversi string tersebut menjadi int</li>
+    </ul>
+    <hr>
+    <h2 id="valid-types-1">Valid Types (1)</h2>
+    <table border="1" width="100%">
+        <tr>
+            <th>Type</th>
+            <th>Keterangan</th>
+        </tr>
+        <tr>
+            <td>Class / Interface</td>
+            <td>Parameter harus tipe Class / Interface</td>
+        </tr>
+        <tr>
+            <td>self</td>
+            <td>Parameter harus sama dengan Class dimana function ini dibuat</td>
+        </tr>
+        <tr>
+            <td>array</td>
+            <td>Parameter harus array</td>
+        </tr>
+        <tr>
+            <td>callable</td>
+            <td>Parameter harus callable</td>
+        </tr>
+        <tr>
+            <td>bool</td>
+            <td>Parameter harus boolean</td>
+        </tr>
+        <tr>
+            <td>float</td>
+            <td>Parameter harus floating point</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>Parameter harus integer number</td>
+        </tr>
+        <tr>
+            <td>string</td>
+            <td>Parameter harus string</td>
+        </tr>
+        <tr>
+            <td>interable</td>
+            <td>Parameter harus array atau tipe Traversable</td>
+        </tr>
+        <tr>
+            <td>object</td>
+            <td>Parameter harus sebuah object</td>
+        </tr>
+    </table>
+    <hr>
+    <h2 id="kode--type-declaration">Kode : Type Declaration</h2>
+    <pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$first</span>, <span class="hljs-keyword">int</span> <span class="hljs-variable">$last</span></span>) </span>{
+    <span class="hljs-variable">$total</span> = <span class="hljs-variable">$first</span> + <span class="hljs-variable">$last</span>;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Total <span class="hljs-subst">$first</span> + <span class="hljs-subst">$last</span> = <span class="hljs-subst">$total</span>&quot;</span> . PHP_EOL;
+}
+
+<span class="hljs-title function_ invoke__">sum</span>(<span class="hljs-string">&quot;100&quot;</span>, <span class="hljs-string">&quot;100&quot;</span>);
+<span class="hljs-title function_ invoke__">sum</span>(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>);
+<span class="hljs-title function_ invoke__">sum</span>(<span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>);
+<span class="hljs-title function_ invoke__">sum</span>([], []);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\30\3.webp" alt="3"></p>
+    <hr>
+    <h2 id="variable-length-argument-list">Variable-length Argument List</h2>
+    <ul>
+        <li>Variable-length argument list merupakan kemampuan dimana kita bisa membuat sebuah parameter yang menerima
+            banyak value</li>
+        <li>Variable-length argument list secara otomatis akan membuat argument tersebut menjadi array, namun kita tidak
+            perlu manual mengirim array ke functionnya</li>
+        <li>Variable-length argument list hanya bisa dilakukan di argument posisi terakhir</li>
+        <li>Untuk membuat variable-length argument list, kita bisa menggunakan tanda … (titik tiga kali) sebelum nama
+            argument</li>
+    </ul>
+    <hr>
+    <h2 id="kode--variable-length-argument-list">Kode : Variable-length Argument List</h2>
+    <pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sumAll</span>(<span class="hljs-params">...<span class="hljs-variable">$values</span></span>) </span>{
+    <span class="hljs-variable">$total</span> = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">foreach</span>(<span class="hljs-variable">$values</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$value</span>) {
+        <span class="hljs-variable">$total</span> += <span class="hljs-variable">$value</span>;
+    }
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Total &quot;</span> . <span class="hljs-title function_ invoke__">implode</span>(<span class="hljs-string">&quot; + &quot;</span>, <span class="hljs-variable">$values</span>) . <span class="hljs-string">&quot; = <span class="hljs-subst">$total</span>&quot;</span> . PHP_EOL;
+}
+
+<span class="hljs-title function_ invoke__">sumAll</span>(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>);
+<span class="hljs-title function_ invoke__">sumAll</span>(...[<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>]);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\30\4.webp" alt="4"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

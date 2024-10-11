@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>String Function</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="string-function">String Function</h1>
+    <h2 id="string-function-1">String Function</h2>
+    <p>- Sebelumnya saya pernah menggunakan beberapa function bawaan dari PHP untuk memanipulasi data string.<br>
+        - Sebenarnya banyak sekali function bawaan PHP yang bisa kita gunakan untuk memanipulasi string<br>
+        - <a href="https://www.php.net/manual/en/ref.strings.php">https://www.php.net/manual/en/ref.strings.php</a></p>
+    <hr>
+    <h2 id="contoh-string-function">Contoh String Function</h2>
+    <table border="1" width="100%">
+        <tr>
+            <th>Function</th>
+            <th>Keterangan</th>
+        </tr>
+        <tr>
+            <td>join() / implode()</td>
+            <td>Menggabungkan array menjadi string</td>
+        </tr>
+        <tr>
+            <td>explode()</td>
+            <td>Memecah string menjadi array</td>
+        </tr>
+        <tr>
+            <td>strtolower()</td>
+            <td>Mengubah string menjadi lowercase</td>
+        </tr>
+        <tr>
+            <td>strtoupper()</td>
+            <td>Mengubah string menjadi uppercase</td>
+        </tr>
+        <tr>
+            <td>substr()</td>
+            <td>Mengambil sebagian string</td>
+        </tr>
+        <tr>
+            <td>trim()</td>
+            <td>Menghapus whitespace di depan dan belakang string</td>
+        </tr>
+    </table>
+    <hr>
+    <h2 id="kode--string-function">Kode : String Function</h2>
+    <pre><code class="language-php"><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">join</span>(<span class="hljs-string">&quot;,&quot;</span>, [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]));
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">explode</span>(<span class="hljs-string">&quot; &quot;</span>, <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>));
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">strtolower</span>(<span class="hljs-string">&quot;FAIZAL DWI AL FARIZI&quot;</span>));
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">strtoupper</span>(<span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>));
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">trim</span>(<span class="hljs-string">&quot;        Faizal      Dwi       &quot;</span>));
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">substr</span>(<span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>));
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\38\1.webp" alt="1"></p>
+
+
+
+</body>
+
+</html>

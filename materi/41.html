@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Require dan Include</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/katex.min.css">
+    <link rel="stylesheet" href="../assets/css/katex-copytex.min.css">
+    <link rel="stylesheet" href="../assets/css/markdown.min.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="require-dan-include">Require dan Include</h1>
+    <h2 id="require-dan-include-1">Require dan Include</h2>
+    <ul>
+        <li>Saat membuat aplikasi, ada baiknya tidak dibuat dalam satu file</li>
+        <li>Lebih baik dipisah ke beberapa file agar kode program tidak terlalu bertumpuk di satu file</li>
+        <li>PHP memiliki function require dan include yang bisa kita gunakan untuk mengambil file php lain</li>
+        <li>Lantas apa bedanya require dan include?</li>
+        <li>Pada require, jika file yang kita ambil tidak ada, maka akan terjadi error dan program terhenti</li>
+        <li>Pada include, jika file yang kita ambil tidak ada, maka hanya akan memberi peringatan, namun program akan
+            tetap dilanjutkan</li>
+    </ul>
+    <hr>
+    <h2 id="kode--file-myfunctionphp">Kode : File MyFunction.php</h2>
+    <p><em>MyFunction.php</em></p>
+    <pre><code class="language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$firstName</span>, <span class="hljs-keyword">string</span> <span class="hljs-variable">$lastName</span></span>) : <span class="hljs-title">string</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello <span class="hljs-subst">$firstName</span> <span class="hljs-subst">$lastName</span>&quot;</span>;
+}
+</code></pre>
+    <hr>
+    <h2 id="kode--include">Kode : Include</h2>
+    <p><em>faizal.php</em></p>
+    <pre><code class="language-php"><span class="hljs-keyword">include</span> <span class="hljs-string">&quot;lib/MyFunction.php&quot;</span>;
+
+<span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Dwi&quot;</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\41\1.webp" alt="1"></p>
+    <hr>
+    <h2 id="posisi-require-dan-include">Posisi Require dan Include</h2>
+    <ul>
+        <li>Kode program PHP akan dibaca dari atas ke bawah, oleh karena itu pastikan posisi require dan include sesuai
+            dengan yang kita inginkan</li>
+        <li>Misal jika sampai kita salah menempatkan posisi require dan include, bisa jadi kita malah memanggil function
+            yang belum ada</li>
+    </ul>
+    <hr>
+    <h2 id="kode--posisi-include-salah">Kode : Posisi Include Salah</h2>
+    <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Dwi&quot;</span>);
+
+<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;lib/MyFunction.php&quot;</span>;
+</code></pre>
+    <hr>
+    <h2 id="require_once-dan-include_once">require_once dan include_once</h2>
+    <ul>
+        <li>Function require dan include akan selalu mengambil file yang kita inginkan</li>
+        <li>Jika kita beberapa kali menggunakan require dan include file yang sama, maka file tersebut akan berkali-kali
+            pula kita ambil</li>
+        <li>Hal ini akan menjadi masalah jika misal dalam file yang kita ambil terdapat definisi function , sehingga
+            jika diambil berkali-kali akan menyebabkan error redeclare function</li>
+        <li>Untungnya di PHP terdapat function require_once dan include_once, function ini bisa mendeteksi jika kita
+            sebelumnya pernah mengambil file yang sama, maka tidak akan diambil lagi</li>
+    </ul>
+    <hr>
+    <h2 id="kode--include-berkali-kali">Kode : Include Berkali-kali</h2>
+    <p><em>faizal.php</em></p>
+    <pre><code class="language-php"><span class="hljs-keyword">include</span> <span class="hljs-string">&quot;lib/MyFunction.php&quot;</span>;
+<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;lib/MyFunction.php&quot;</span>;
+
+<span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Dwi&quot;</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\41\2.webp" alt="2"></p>
+    <hr>
+    <h2 id="kode--include_once">Kode : include_once</h2>
+    <pre><code class="language-php"><span class="hljs-keyword">include_once</span> <span class="hljs-string">&quot;lib/MyFunction.php&quot;</span>;
+<span class="hljs-keyword">include_once</span> <span class="hljs-string">&quot;lib/MyFunction.php&quot;</span>;
+
+<span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Dwi&quot;</span>);
+</code></pre>
+    <p><strong>Hasil :</strong></p>
+    <p><img src="..\assets\img\41\1.webp" alt="1"></p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>
